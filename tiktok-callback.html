@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connexion – tomgonly clips publication</title>
+<style>body{font-family:-apple-system,system-ui,sans-serif;max-width:600px;margin:60px auto;padding:0 16px;line-height:1.6;color:#111;background:#fff}</style>
+</head>
+<body>
+<h1>Connexion en cours…</h1>
+<p id="msg">Transmission de l'autorisation au script local de Tom.</p>
+<script>
+  // Renvoie le code d'autorisation au script qui tourne sur le Mac de Tom (localhost).
+  var q = window.location.search;
+  if (q && q.indexOf('code=') !== -1) {
+    window.location.replace('http://localhost:8765/tiktok' + q);
+  } else {
+    document.getElementById('msg').textContent = "Aucun code reçu. Tu peux fermer cette page.";
+  }
+</script>
+<p><a href="index.html">Accueil</a></p>
+</body>
+</html>
